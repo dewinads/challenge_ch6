@@ -1,0 +1,41 @@
+<button type="button" onclick="history.back()" class="btn btn-light">
+    <i class="bi-arrow-left"></i>
+    Kembali
+  </button>
+  
+  <h3 class="my-3"><%= pageTitle %></h3>
+  
+  <div class="table-responsive mt-3">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th scope="row">Nama Lengkap</th>
+          <td><%= biodata.fullName %></td>
+        </tr>
+        <tr>
+          <th scope="row">Alamat</th>
+          <td><%= biodata.address %></td>
+        </tr>
+        <tr>
+          <th scope="row">Jenis Kelamin</th>
+          <td><%= biodata.gender %></td>
+        </tr>
+        <tr>
+          <th scope="row">No. Handphone</th>
+          <td><%= biodata.phoneNumber %></td>
+        </tr>
+        <tr>
+          <th scope="row">User Game</th>
+          <td><%= biodata.userGame.username %></td>
+        </tr>
+        <tr>
+          <th scope="row">Data Dibuat</th>
+          <td><%= biodata.createdAt %></td>
+        </tr>
+        <tr>
+          <th scope="row">Data Diperbarui</th>
+          <td><%= biodata.updatedAt %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-between align-items-center">
+    <h3 class="m-0"><%= pageTitle %></h3>
+    <a class="btn btn-primary" href="/biodata/create" role="button">
+      <i class="bi-plus-lg"></i> Buat Biodata
+    </a>
+  </div>
+  
+  <div class="table-responsive mt-3">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">User Game</th>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% biodata.forEach((biodata, index) => { %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td class="w-100"><%= biodata.fullName %></td>
+            <td class="w-100"><%= biodata.address %></td>
+            <td class="w-100"><%= biodata.gender %></td>
+            <td class="w-100"><%= biodata.phoneNumber %></td>
+            <td class="w-100"><%= biodata.userGame.username %></td>
+            <td>
+              <div class="d-flex gap-2 text-nowrap">
+                <a class="btn btn-success btn-sm" href="/biodata/<%= biodata.id %>" role="button">
+                  <i class="bi-eye-fill"></i> Lihat Detail
+                </a>
+                <a class="btn btn-primary btn-sm" href="/biodata/<%= biodata.id %>/edit" role="button">
+                  <i class="bi-pencil-fill"></i> Edit
+                </a>
+                
+                <form method="post" action="/biodata/<%= biodata.id %>?_method=DELETE">
+                  <button class="btn btn-danger btn-sm" type="submit">
+                    <i class="bi-trash-fill"></i> Hapus
+                  </button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
